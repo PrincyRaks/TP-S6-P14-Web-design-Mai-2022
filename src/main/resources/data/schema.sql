@@ -21,7 +21,7 @@ VALUES (default, 'non-publie'),
 
 CREATE TABLE admin(
     idadmin serial primary key,
-    admin varchar(50) not null,
+    login varchar(50) not null,
     motdepasse varchar(50) not null
 );
 INSERT INTO admin
@@ -30,8 +30,7 @@ INSERT INTO admin
 VALUES (default, 'author2', 'author2');
 INSERT INTO admin
 VALUES (default, 'author3', 'author3');
-INSERT INTO admin
-VALUES (default, 'publisher', 'publisher');
+
 
 
 
@@ -43,11 +42,7 @@ CREATE TABLE Annonce(
     contenu text,
     datecreation timestamp not null default NOW(),
     datepublication timestamp,
---     datedebut date,
---     datefin date,
-    -- lieu varchar(50),
-    -- idcategorie int not null references categorie(id),
-    -- idrubrique int not null references rubrique(id),
+    nomPhoto varchar(250) not null,
     idetat int default 1 references etat(id),
     idadmin int not null references admin(idadmin)
 );
@@ -55,4 +50,4 @@ CREATE TABLE Annonce(
 -- ALTER TABLE article RENAME COLUMN admin TO login;
 -- ALTER TABLE annonce DROP COLUMN datefin;
 -- ALTER TABLE annonce DROP COLUMN datedebut;
--- ALTER TABLE annonce ADD COLUMN contenu text;
+-- ALTER TABLE annonce ADD COLUMN nomphoto varchar(250);

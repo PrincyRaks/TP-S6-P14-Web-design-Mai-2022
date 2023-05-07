@@ -66,7 +66,7 @@
           <div class="mb-3" >
             <label class="form-label">Contenu</label>
             <div>
-              <textarea style="height: 100px" name="contenu" id="idckeditor" ></textarea>
+              <textarea style="height: 100px" name="contenu" id="idckeditor"></textarea>
             </div>
           </div>
 
@@ -87,5 +87,5 @@
   </div>
 </div>
 
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="../footer.jsp"></jsp:include>
 

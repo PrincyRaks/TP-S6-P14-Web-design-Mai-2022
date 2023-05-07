@@ -17,11 +17,9 @@
     <div class="col-xl-6" style="width: 700px;">
         <div class="card">
             <div class="card-body">
-                <center><h4 class="card-title">Formulaire </h4></center>
+                <center><h4 class="card-title">Ajout information </h4></center>
                 <form class="custom-validation" action="/sites-IA/backoffice/updating-annonce.itu" method="POST" enctype="multipart/form-data">
                     <input name="id" type="text" value="<%= annonce.getId() %>" hidden>
-                    <input name="idadmin" type="text" value="<%= annonce.getIdadmin() %>" hidden>
-
                     <div class="mb-3">
                         <label class="form-label">Titre</label>
                         <div>
@@ -69,4 +67,4 @@
 </div>
 
 
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="../footer.jsp"></jsp:include>

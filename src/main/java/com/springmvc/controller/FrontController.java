@@ -23,7 +23,7 @@ public class FrontController {
 
     @RequestMapping
     public ModelAndView index(){
-        modelAndView.addObject("liste",annonceRepository.ListeAnnonceEtat(2));
+        modelAndView.addObject("liste",annonceRepository.ListeAnnoncePublie());
         modelAndView.setViewName("public/index");
         return  modelAndView;
     }

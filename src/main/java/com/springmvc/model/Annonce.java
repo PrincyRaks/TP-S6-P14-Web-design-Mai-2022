@@ -23,7 +23,7 @@ public class Annonce {
     private  String resume;
     private String photo;
     private String contenu;
-
+    private String nomphoto;
     @Nullable
     private Timestamp datepublication;
 

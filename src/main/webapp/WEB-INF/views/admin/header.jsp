@@ -11,12 +11,12 @@
 <html lang="en">
 
     <%
-        String title = "Sites sur les info IA";
-        String description= "BackOffice";
+        String title = "Sites sur d’informations sur l’intelligence artificielle";
+        String description= "Backoffice-admin";
         if (request.getAttribute("annonce") != null ){
             Annonce annonce = (Annonce) request.getAttribute("annonce");
-            title = "Sites IA - " + annonce.getTitre();
-            description = "sites information intelligence artificielle - " + annonce.getResume();
+            title = title+"-"+ annonce.getTitre();
+            description = title + "-"+description+"-"+ annonce.getTitre() + "-" + annonce.getResume();
         }
     %>
 

@@ -11,8 +11,12 @@ import java.util.List;
 @Repository
 public interface AnnonceRepository extends JpaRepository<Annonce,Integer> {
 
+    @Query(value = "SELECT * FROM Annonce where idetat =2 and datepublication<= NOW()",nativeQuery = true)
+    List<Annonce> ListeAnnoncePublie();
+
     @Query(value = "SELECT * FROM Annonce where idetat =:idetat",nativeQuery = true)
     List<Annonce> ListeAnnonceEtat(int idetat);
 
+    List<Annonce> findAllByOrderByDatepublicationDesc();
     List<Annonce> findAnnoncesByTitreContainingIgnoreCase(String titre);
 }

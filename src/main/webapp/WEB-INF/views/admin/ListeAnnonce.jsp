@@ -40,7 +40,7 @@
     %>
     <div class="col-md-6 col-lg-6 col-xl-3" style="width: 400px;">
         <div class="card">
-            <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= a.getPhoto() %>" alt="Card image cap">
+            <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= a.getPhoto() %>" alt="<%= a.getNomphoto() %>>">
             <div class="card-body">
                 <form action="/sites-IA/backoffice/validate-publication.itu" method="post">
                     <h4 class="card-title" style="color: #7b70be;" ><%= a.getTitre() %></h4>
@@ -87,4 +87,4 @@
     %>
 </div>
 
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="../footer.jsp"></jsp:include>

@@ -16,12 +16,8 @@ import org.springframework.web.servlet.view.RedirectView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Base64;
 
 @RequestMapping("/admin")
 @Controller
@@ -29,7 +25,6 @@ public class BackController {
 
     @Autowired
     AdminRepository adminRepository;
-
     @Autowired
     AnnonceRepository annonceRepository;
 
@@ -66,29 +61,21 @@ public class BackController {
     }
 
     @PostMapping("/insert-annonce")
-    public ModelAndView AddAnnonce(@RequestParam("sary") MultipartFile multipartFile, HttpServletRequest request, HttpSession session) throws IOException {
+    public ModelAndView AddAnnonce(@RequestParam("sary") MultipartFile multipartFile, Annonce annonce, HttpSession session) throws IOException {
         try{
-            UploadImage.saveImage(multipartFile);
+            annonce.setIdetat(1);
+            Admin admin = (Admin) session.getAttribute("admin");
+            annonce.setIdadmin(admin.getId());
+            annonce.setDatepublication(null);
+            annonce.setNomphoto(multipartFile.getOriginalFilename());
+            annonce.setPhoto(UploadImage.saveImageToBase64(multipartFile));
+            annonce = annonceRepository.save(annonce);
+            if (annonce.getId() != 0){
+                modelAndView.addObject("info","Annonce crée");
+            }
         }catch (Exception e){
-            modelAndView.addObject("error",e.getMessage());
-        }
-        Annonce annonce = new Annonce();
-        String originalString = "D:\\ETU-001611\\S6\\Mr Rojo\\Exam\\TP S6 P14 Web design Mai 2022\\iia\\src\\main\\webapp\\WEB-INF\\img\\"+multipartFile.getOriginalFilename();
-        annonce.setTitre(request.getParameter("titre"));
-        annonce.setResume(request.getParameter("resume"));
-        annonce.setContenu(request.getParameter("contenu"));
-        annonce.setIdetat(1);
-        Admin admin = (Admin) session.getAttribute("admin");
-        annonce.setIdadmin(admin.getId());
-        annonce.setDatepublication(null);
-        byte[] bytes = Files.readAllBytes(Paths.get(originalString));
-        String base64 = Base64.getEncoder().encodeToString(bytes);
-        annonce.setPhoto(base64);
-        annonce = annonceRepository.save(annonce);
-        if (annonce.getId() != 0){
-            modelAndView.addObject("info","Annonce crée");
-        }else {
             modelAndView.addObject("error","Annonce non-crée");
+            e.printStackTrace();
         }
         modelAndView.setViewName("admin/FormAnnonce");
         return modelAndView;
@@ -96,7 +83,7 @@ public class BackController {
 
     @GetMapping("/liste-annonce")
     public ModelAndView toListeAnnnonce(HttpSession session){
-        modelAndView.addObject("annonces",annonceRepository.findAll());
+        modelAndView.addObject("annonces",annonceRepository.findAllByOrderByDatepublicationDesc());
         int number = annonceRepository.ListeAnnonceEtat(1).size();
         session.setAttribute("non-valide",number);
         modelAndView.setViewName("admin/ListeAnnonce");
@@ -106,18 +93,18 @@ public class BackController {
     @PostMapping("/validate-publish")
     public ModelAndView validatePublish(HttpServletRequest request,HttpSession session) throws Exception {
         Annonce annonce = annonceRepository.findById(Integer.parseInt(request.getParameter("idannonce"))).get();
-        annonce.setIdetat(2);
-        if(request.getParameter("datepublication") == null){
-            modelAndView.addObject("error","Inserer une date de publication");
-            return toListeAnnnonce(session);
-        }else {
-            annonce.setDatepublication(Converter.DateTimeConverter(request.getParameter("datepublication")));
-        }
-        annonce = annonceRepository.save(annonce);
-        if (annonce != null){
-            modelAndView.addObject("info-success","Annonce publiée");
-        }else {
-            modelAndView.addObject("info-error","Annonce non-publiée");
+        try {
+            if(request.getParameter("datepublication") == null){
+                modelAndView.addObject("error","Inserer une date de publication");
+                return toListeAnnnonce(session);
+            }else if(request.getParameter("datepublication") != null) {
+                annonce.setIdetat(2);
+                annonce.setDatepublication(Converter.DateTimeConverter(request.getParameter("datepublication")));
+                annonceRepository.save(annonce);
+                modelAndView.addObject("info-success","Annonce publiée");
+            }
+        }catch (Exception e){
+            modelAndView.addObject("info-error","Annonce non-publiée : " + e.getMessage());
         }
         return toListeAnnnonce(session);
     }
@@ -133,27 +120,23 @@ public class BackController {
     public ModelAndView ModifyAnnonce(@RequestParam("sary") MultipartFile multipartFile,HttpServletRequest request,HttpSession session) throws IOException {
         Annonce annonce = annonceRepository.findById(Integer.parseInt(request.getParameter("id"))).get();
         try{
-            UploadImage.saveImage(multipartFile);
+            annonce.setTitre(request.getParameter("titre"));
+            annonce.setResume(request.getParameter("resume"));
+            annonce.setContenu(request.getParameter("contenu"));
+            annonce.setNomphoto(multipartFile.getOriginalFilename());
+            Admin admin = (Admin) session.getAttribute("admin");
+            annonce.setIdadmin(admin.getId());
+            annonce.setIdetat(1);
+            annonce.setDatepublication(null);
+            System.out.println("Changement : " + Timestamp.valueOf(LocalDateTime.now()) );
+            annonce.setDateCreation(Timestamp.valueOf(LocalDateTime.now()));
+            annonce.setPhoto(UploadImage.saveImageToBase64(multipartFile));
+            if (annonce.getId() != 0){
+                modelAndView.addObject("info","Annonce modifiée");
+            }
         }catch (Exception e){
-            modelAndView.addObject("error",e.getMessage());
-        }
-        String originalString = "D:\\ETU-001611\\S6\\Mr Rojo\\Exam\\TP S6 P14 Web design Mai 2022\\iia\\src\\main\\webapp\\WEB-INF\\img\\"+multipartFile.getOriginalFilename();
-        annonce.setTitre(request.getParameter("titre"));
-        annonce.setResume(request.getParameter("resume"));
-        annonce.setContenu(request.getParameter("contenu"));
-        annonce.setIdadmin(Integer.parseInt(request.getParameter("idadmin")));
-        annonce.setIdetat(1);
-        annonce.setDatepublication(null);
-        System.out.println("Changement : " + Timestamp.valueOf(LocalDateTime.now()) );
-        annonce.setDateCreation(Timestamp.valueOf(LocalDateTime.now()));
-        byte[] bytes = Files.readAllBytes(Paths.get(originalString));
-        String base64 = Base64.getEncoder().encodeToString(bytes);
-        annonce.setPhoto(base64);
-        annonce = annonceRepository.save(annonce);
-        if (annonce.getId() != 0){
-            modelAndView.addObject("info","Annonce modifiée");
-        }else {
-            modelAndView.addObject("error","Annonce non-modifiée");
+            e.printStackTrace();
+            modelAndView.addObject("error","Annonce non-modifiée"+ "\n" + e.getMessage());
         }
         modelAndView.setViewName("admin/FormAnnonce");
         return modelAndView;

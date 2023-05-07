@@ -19,12 +19,13 @@
 
 
     <%
-        String title = "Sites sur les infos IA";
-        String description= "IA & more";
+        String title = "Sites sur d’informations sur l’intelligence artificielle";
+        String description= "Découvrez les dernières avancées en matière d'intelligence artificielle, les applications pratiques " +
+         "dans différents domaines et les enjeux éthiques associés à l'utilisation de l'IA sur notre site d'informations sur l'IA";
         if (request.getAttribute("annonce") != null ){
             Annonce annonce = (Annonce) request.getAttribute("annonce");
-            title = "Sites IA - " + annonce.getTitre();
-            description = "sites sur les informations de l'intelligence artificielle - " + annonce.getResume();
+            title = title+"-"+ annonce.getTitre();
+            description = title +"-" + description +"-"+ annonce.getTitre() +"-" + annonce.getResume();
         }
     %>
 
@@ -120,7 +121,7 @@
 
                 <div class="dropdown d-inline-block">
                     <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="mdi mdi-account-circle font-size-17 text-muted align-middle me-1"></i>
+                        <i class="mdi mdi-account-circle font-size-17 text-muted align-middle me-1"></i>Backoffice
                     </button>
                     <div class="dropdown-menu dropdown-menu-end">
                         <!-- item-->

@@ -16,10 +16,10 @@
             <div id="carouselExampleCaption" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img style="width: 1200px;height: 200px;"  src="/assets/images/small/img-5.jpg" >
+                        <img style="width: 1200px;height: 200px;"  src="/assets/images/intelligence artificielle.jpeg" alt="intelligence-artificielle">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="text-white">Site d’informations sur l’intelligence artificielle</h1>
-                            <h5>IA du moment</h5>
+                            <h5>Découvrez les dernières avancées en matière d'intelligence artificielle, les applications pratiques dans différents domaines et les enjeux éthiques associés à l'utilisation de l'IA sur notre site d'informations sur l'IA</h5>
                         </div>
                     </div>
                 </div>
@@ -55,9 +55,9 @@
     %>
     <div class="col-lg-4">
         <div class="card">
-            <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonces.getPhoto() %>" alt="Card image cap">
+            <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonces.getPhoto() %>" alt="<%= annonces.getNomphoto() %>">
             <div class="card-body">
-                <h4 class="card-title" style="color: #036bfc;"><%= annonces.getTitre() %></h4>
+                <h4 class="card-title" style="color: #7b70be;"><%= annonces.getTitre() %></h4>
                 <p class="card-text"><%= annonces.getResume() %> </p>
                 <p>Date publication : <%= annonces.getDatepublication() %> </p>
                 <a href="/sites-IA/public/annonce-read-<%= annonces.getId() %>.gg" class="btn btn-primary waves-effect waves-light">En savoir plus</a>
@@ -71,4 +71,4 @@
     %>
 </div>
 
-<jsp:include page="footer.jsp"></jsp:include>
+<jsp:include page="../footer.jsp"></jsp:include>
