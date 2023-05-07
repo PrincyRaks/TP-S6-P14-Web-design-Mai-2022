@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite
+        PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+<!--  Front rewriting  -->
+    <rule>
+        <from>^/sites-IA/public/accueil.gg$</from>
+        <to>/</to>
+    </rule>
+    <rule>
+        <from>^/sites-IA/public/searching-annonce.gg$</from>
+        <to>/public-recherche</to>
+    </rule>
+    <rule>
+        <from>^/sites-IA/public/annonce-read-([a-z0-9]*).gg$</from>
+        <to>/detail-annonce/$1</to>
+    </rule>
+
+
+
+<!--  Back Rewriting  -->
+    <rule>
+        <from>^/sites-IA/back-office/page-login.itu$</from>
+        <to>/admin/login</to>
+    </rule>
+
+    <rule>
+        <from>^/sites-IA/backoffice/login-admin.itu$</from>
+        <to>/admin/signin</to>
+    </rule>
+
+    <rule>
+        <from>^/sites-IA/backoffice/logout-admin.itu$</from>
+        <to>/admin/logout</to>
+    </rule>
+
+    <rule>
+        <from>^/sites-IA/backoffice/page-add-annonce.itu$</from>
+        <to>/admin/formulaire-annonce</to>
+    </rule>
+
+    <rule>
+        <from>^/sites-IA/backoffice/adding-annonce.itu$</from>
+        <to>/admin/insert-annonce</to>
+    </rule>
+
+    <rule>
+        <from>^/sites-IA/backoffice/liste-annonce-invalid&amp;valid.itu$</from>
+        <to>/admin/liste-annonce</to>
+    </rule>
+
+    <rule>
+        <from>^/sites-IA/backoffice/validate-publication.itu$</from>
+        <to>/admin/validate-publish</to>
+    </rule>
+
+    <rule>
+        <from>^/sites-IA/backoffice/page-formulaire-modification-([a-z0-9]*).itu$</from>
+        <to>/admin/modify-annonce/$1</to>
+    </rule>
+
+    <rule>
+        <from>^/sites-IA/backoffice/updating-annonce.itu$</from>
+        <to>/admin/update-annonce</to>
+    </rule>
+
+
+</urlrewrite>
