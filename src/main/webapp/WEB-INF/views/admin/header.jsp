@@ -11,19 +11,19 @@
 <html lang="en">
 
     <%
-        String title = "Sites sur d’informations sur l’intelligence artificielle";
-        String description= "Backoffice-admin";
-        if (request.getAttribute("annonce") != null ){
-            Annonce annonce = (Annonce) request.getAttribute("annonce");
-            title = title+"-"+ annonce.getTitre();
-            description = title + "-"+description+"-"+ annonce.getTitre() + "-" + annonce.getResume();
-        }
+//        String title = "Sites sur d’informations sur l’intelligence artificielle";
+//        String description= "Backoffice-admin";
+//        if (request.getAttribute("annonce") != null ){
+//            Annonce annonce = (Annonce) request.getAttribute("annonce");
+//            title = title+"-"+ annonce.getTitre();
+//            description = title + "-"+description+"-"+ annonce.getTitre() + "-" + annonce.getResume();
+//        }
     %>
 
 <head>
     <%--  Important  --%>
-    <title><%= title %></title>
-    <meta content= "<%= description %>" name="description" />
+    <title>themes</title>
+<%--    <meta content= "" name="description" />--%>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
