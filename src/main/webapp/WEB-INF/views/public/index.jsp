@@ -51,7 +51,7 @@
         <div class="card">
             <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonces.getPhoto() %>" alt="<%= annonces.getNomphoto() %>">
             <div class="card-body">
-                <h4 class="card-title" style="color: #7b70be;"><%= annonces.getTitre() %></h4>
+                <h2 class="card-title" style="color: #7b70be;"><%= annonces.getTitre() %></h2>
                 <p class="card-text"><%= annonces.getResume() %> </p>
                 <p>Date publication : <%= annonces.getDatepublication() %> </p>
                 <a href="/sites-IA/public/annonce-read-<%= annonces.getId() %>.gg" class="btn btn-primary waves-effect waves-light">En savoir plus</a>
