@@ -14,23 +14,29 @@
     Annonce annonce = (Annonce) request.getAttribute("annonce");
 %>
 
+
 <div class="row">
-    <div class="col-xl-7" style=" margin: auto;">
-        <div class="card">
-            <div class="card-body">
-                <h1 style="color: #7b70be;"><%= annonce.getTitre() %></h1>
-                <h4><%= annonce.getResume() %></h4>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-xl-5">
                     <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonce.getPhoto() %>" alt="<%= annonce.getNomphoto()%>">
+                </div>
+                <div class="col-xl-5" style="margin: auto" >
+                    <h1 style="color: #7b70be;"><%= annonce.getTitre() %></h1>
+                    <h4><%= annonce.getResume() %></h4>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <%= annonce.getContenu() %>
                 <br>
                 <br>
                 <h6 style="font-size: 10px"> Date publication : <%= annonce.getDatepublication() %></h6>
                 <h6 style="font-size: 10px"> Auteur : <%= annonce.getAdmin().getLogin() %></h6>
-                <br>
-                <%= annonce.getContenu() %>
             </div>
         </div>
     </div>
-
 </div>
 
 
