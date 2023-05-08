@@ -14,6 +14,6 @@ public class RessourceConfig implements WebMvcConfigurer {
         registry.addResourceHandler("/assets/**")
                 .addResourceLocations("classpath:/static/assets/")
                 .addResourceLocations("classpath:/static/imgIA/")
-                .setCacheControl(CacheControl.maxAge(30, TimeUnit.DAYS));
+                .setCacheControl(CacheControl.maxAge(400, TimeUnit.DAYS));
     }
 }
