@@ -66,9 +66,6 @@
                     </a>
                 </div>
 
-                <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect vertical-menu-btn">
-                    <i class="mdi mdi-menu"></i>
-                </button>
             </div>
 
             <div class="d-flex">
@@ -103,13 +100,6 @@
                     <div class="dropdown-menu dropdown-menu-end">
                         <a class="dropdown-item text-danger" href="/sites-IA/backoffice/logout-admin.itu"><i class="mdi mdi-power font-size-17 text-muted align-middle me-1 text-danger"></i> Logout</a>
                     </div>
-                </div>
-
-
-                <div class="dropdown d-none d-lg-inline-block">
-                    <button name="grand-plan" type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
-                        <i class="mdi mdi-fullscreen font-size-24"></i>
-                    </button>
                 </div>
 
             </div>
