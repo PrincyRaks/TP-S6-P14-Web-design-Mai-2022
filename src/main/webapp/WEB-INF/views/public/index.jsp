@@ -16,7 +16,7 @@
             <div id="carouselExampleCaption" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img style="height: 200px;"  src="/assets/images/intelligence artificielle.jpeg" alt="intelligence-artificielle">
+                        <img src="/assets/images/intelligence artificielle.jpeg" alt="intelligence-artificielle">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="text-white">Site d’informations sur l’intelligence artificielle</h1>
                             <strong>Découvrez les dernières avancées en matière d'intelligence artificielle, les applications pratiques dans différents domaines et les enjeux éthiques associés à l'utilisation de l'IA sur notre site d'informations sur l'IA</strong>
