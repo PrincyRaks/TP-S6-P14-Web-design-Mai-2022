@@ -49,7 +49,7 @@
     %>
     <div class="col-lg-4">
         <div class="card">
-            <img width="300" height="80" class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonces.getPhoto() %>" alt="<%= annonces.getNomphoto() %>">
+            <img width="286" height="180" class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonces.getPhoto() %>" alt="<%= annonces.getNomphoto() %>">
             <div class="card-body">
                 <h2 class="card-title" style="color: #7b70be;"><%= annonces.getTitre() %></h2>
                 <p class="card-text"><%= annonces.getResume() %> </p>

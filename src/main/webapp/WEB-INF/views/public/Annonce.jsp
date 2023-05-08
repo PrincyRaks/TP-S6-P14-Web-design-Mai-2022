@@ -20,7 +20,7 @@
         <div class="card-body">
             <div class="row">
                 <div class="col-xl-5">
-                    <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonce.getPhoto() %>" alt="<%= annonce.getNomphoto()%>">
+                    <img width="480" height="285" class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonce.getPhoto() %>" alt="<%= annonce.getNomphoto()%>">
                 </div>
                 <div class="col-xl-5" style="margin: auto" >
                     <h1 style="color: #7b70be;"><%= annonce.getTitre() %></h1>
