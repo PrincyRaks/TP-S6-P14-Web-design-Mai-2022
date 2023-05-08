@@ -22,12 +22,12 @@
             <ul class="metismenu list-unstyled" id="side-menu">
                 <li class="menu-title">Annonce</li>
                 <li>
-                    <a href="/sites-IA/backoffice/page-add-annonce.itu" class="has-arrow waves-effect">
+                    <a href="/sites-IA/backoffice/page-add-annonce.itu">
                         <span>Ajout Annonce</span>
                     </a>
                 </li>
                 <li>
-                    <a href="/sites-IA/backoffice/liste-annonce-invalid&amp;valid.itu" class="has-arrow waves-effect">
+                    <a href="/sites-IA/backoffice/liste-annonce-invalid&amp;valid.itu">
                         <span>Listes des annonces <span class="badge rounded-pill bg-warning float-end"><%= number %></span></span>
                     </a>
                 </li>
