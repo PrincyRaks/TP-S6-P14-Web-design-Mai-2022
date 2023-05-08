@@ -19,7 +19,7 @@
                         <img style="width: 1200px;height: 200px;"  src="/assets/images/intelligence artificielle.jpeg" alt="intelligence-artificielle">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="text-white">Site d’informations sur l’intelligence artificielle</h1>
-                            <h5>Découvrez les dernières avancées en matière d'intelligence artificielle, les applications pratiques dans différents domaines et les enjeux éthiques associés à l'utilisation de l'IA sur notre site d'informations sur l'IA</h5>
+                            <h3>Découvrez les dernières avancées en matière d'intelligence artificielle, les applications pratiques dans différents domaines et les enjeux éthiques associés à l'utilisation de l'IA sur notre site d'informations sur l'IA</h3>
                         </div>
                     </div>
                 </div>
