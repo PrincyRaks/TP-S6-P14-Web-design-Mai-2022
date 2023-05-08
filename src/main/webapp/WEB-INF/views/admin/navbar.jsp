@@ -23,13 +23,11 @@
                 <li class="menu-title">Annonce</li>
                 <li>
                     <a href="/sites-IA/backoffice/page-add-annonce.itu" class="has-arrow waves-effect">
-                        <i class="mdi mdi-buffer"></i>
                         <span>Ajout Annonce</span>
                     </a>
                 </li>
                 <li>
                     <a href="/sites-IA/backoffice/liste-annonce-invalid&amp;valid.itu" class="has-arrow waves-effect">
-                        <i class="mdi mdi-buffer"></i>
                         <span>Listes des annonces <span class="badge rounded-pill bg-warning float-end"><%= number %></span></span>
                     </a>
                 </li>
