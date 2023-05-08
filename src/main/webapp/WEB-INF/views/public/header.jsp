@@ -19,20 +19,20 @@
 
 
     <%
-//        String title = "Sites sur d’informations sur l’intelligence artificielle";
-//        String description= "Découvrez les dernières avancées en matière d'intelligence artificielle, les applications pratiques " +
-//         "dans différents domaines et les enjeux éthiques associés à l'utilisation de l'IA sur notre site d'informations sur l'IA";
-//        if (request.getAttribute("annonce") != null ){
-//            Annonce annonce = (Annonce) request.getAttribute("annonce");
-//            title = title+"-"+ annonce.getTitre();
-//            description = title +"-" + description +"-"+ annonce.getTitre() +"-" + annonce.getResume();
-//        }
+        String title = "Sites sur d’informations sur l’intelligence artificielle";
+        String description= "Découvrez les dernières avancées en matière d'intelligence artificielle, les applications pratiques " +
+         "dans différents domaines et les enjeux éthiques associés à l'utilisation de l'IA sur notre site d'informations sur l'IA";
+        if (request.getAttribute("annonce") != null ){
+            Annonce annonce = (Annonce) request.getAttribute("annonce");
+            title = title+"-"+ annonce.getTitre();
+            description = title +"-" + description +"-"+ annonce.getTitre() +"-" + annonce.getResume();
+        }
     %>
 
 <head>
     <%--  Important  --%>
-        <title>themes</title>
-<%--    <meta content= "" name="description" />--%>
+    <title><%= title %></title>
+    <meta content= "<%= description %>" name="description" />
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
