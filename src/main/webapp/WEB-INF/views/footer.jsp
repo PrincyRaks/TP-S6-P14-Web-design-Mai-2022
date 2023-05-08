@@ -26,17 +26,6 @@
 
 </div>
 <!-- END layout-wrapper -->
-
-<!-- Right Sidebar -->
-<div class="right-bar">
-    <div data-simplebar class="h-100">
-        <!-- Settings -->
-        <hr class="mt-0" />
-
-    </div> <!-- end slimscroll-menu-->
-</div>
-<!-- /Right-bar -->
-
 <!-- Right bar overlay-->
 <div class="rightbar-overlay"></div>
 

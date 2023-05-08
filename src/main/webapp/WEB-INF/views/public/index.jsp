@@ -13,7 +13,7 @@
 <div class="row">
     <div class="card">
         <div class="card-body">
-                        <img width="1200" height="400" src="/assets/images/intelligence artificielle.jpeg" alt="intelligence-artificielle">
+                        <img width="1200" height="200" src="/assets/images/intelligence artificielle.jpeg" alt="intelligence-artificielle">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="text-white">Site d’informations sur l’intelligence artificielle</h1>
                             <strong>Découvrez les dernières avancées en matière d'intelligence artificielle, les applications pratiques dans différents domaines et les enjeux éthiques associés à l'utilisation de l'IA sur notre site d'informations sur l'IA</strong>
