@@ -35,9 +35,7 @@
     <link href="${pageContext.request.contextPath}/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="${pageContext.request.contextPath}/assets/css/app.min.css" rel="stylesheet" type="text/css" />
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+    
 </head>
 
 <body data-sidebar="dark">
