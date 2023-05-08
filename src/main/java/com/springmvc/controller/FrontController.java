@@ -2,7 +2,6 @@ package com.springmvc.controller;
 
 import com.springmvc.model.Annonce;
 import com.springmvc.repository.AnnonceRepository;
-import com.springmvc.service.Converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
