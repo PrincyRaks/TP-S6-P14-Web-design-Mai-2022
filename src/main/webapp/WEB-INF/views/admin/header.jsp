@@ -107,14 +107,6 @@
                 </div>
 
 
-
-                <div class="dropdown d-none d-md-block ms-2">
-                    <button type="button" class="btn header-item waves-effect" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img class="me-2" src="/assets/images/flags/us_flag.jpg" alt="Header Language" height="16"> English <span class="mdi mdi-chevron-down"></span>
-                    </button>
-                </div>
-
-
                 <div class="dropdown d-none d-lg-inline-block">
                     <button name="grand-plan" type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen">
                         <i class="mdi mdi-fullscreen font-size-24"></i>
