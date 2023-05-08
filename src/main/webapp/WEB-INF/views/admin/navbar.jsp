@@ -20,20 +20,19 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title">Main</li>
-
+                <li class="menu-title">Annonce</li>
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                    <a href="/sites-IA/backoffice/page-add-annonce.itu" class="has-arrow waves-effect">
                         <i class="mdi mdi-buffer"></i>
-                        <span>Annonce</span>
+                        <span>Ajout Annonce</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="/sites-IA/backoffice/page-add-annonce.itu">Ajout Annonce</a></li>
-                        <li><a href="/sites-IA/backoffice/liste-annonce-invalid&amp;valid.itu">Listes des annonces <span class="badge rounded-pill bg-warning float-end"><%= number %></span></a></li>
-                    </ul>
                 </li>
-
-
+                <li>
+                    <a href="/sites-IA/backoffice/liste-annonce-invalid&amp;valid.itu" class="has-arrow waves-effect">
+                        <i class="mdi mdi-buffer"></i>
+                        <span>Listes des annonces <span class="badge rounded-pill bg-warning float-end"><%= number %></span></span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->
