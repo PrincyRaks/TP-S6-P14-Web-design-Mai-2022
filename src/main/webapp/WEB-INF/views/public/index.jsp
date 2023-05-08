@@ -13,7 +13,7 @@
 <div class="row">
     <div class="card">
         <div class="card-body">
-                        <img src="/assets/images/intelligence artificielle.jpeg" alt="intelligence-artificielle">
+                        <img width="1200" height="400" src="/assets/images/intelligence artificielle.jpeg" alt="intelligence-artificielle">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="text-white">Site d’informations sur l’intelligence artificielle</h1>
                             <strong>Découvrez les dernières avancées en matière d'intelligence artificielle, les applications pratiques dans différents domaines et les enjeux éthiques associés à l'utilisation de l'IA sur notre site d'informations sur l'IA</strong>
@@ -49,7 +49,7 @@
     %>
     <div class="col-lg-4">
         <div class="card">
-            <img class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonces.getPhoto() %>" alt="<%= annonces.getNomphoto() %>">
+            <img width="300" height="80" class="card-img-top img-fluid" src="data:image/jpeg;base64,<%= annonces.getPhoto() %>" alt="<%= annonces.getNomphoto() %>">
             <div class="card-body">
                 <h2 class="card-title" style="color: #7b70be;"><%= annonces.getTitre() %></h2>
                 <p class="card-text"><%= annonces.getResume() %> </p>
