@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public interface AnnonceRepository extends JpaRepository<Annonce,Integer> {
 
-    @Query(value = "SELECT * FROM Annonce where idetat =2 and datepublication<= NOW()",nativeQuery = true)
+    @Query(value = "SELECT id,titre,resume,nomphoto,photo,datepublication  FROM Annonce where idetat =2 and datepublication<= NOW()",nativeQuery = true)
     List<Annonce> ListeAnnoncePublie();
 
     @Query(value = "SELECT * FROM Annonce where idetat =:idetat",nativeQuery = true)
